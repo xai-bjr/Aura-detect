@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA://detect - Authenticity Scan</title>
+    
+    <!-- CSS - Updated path (same directory) -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="canvas-bg"></canvas>
+    
+    <!-- Floating Particles Container -->
+    <div class="floating-particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-animation">
+                <div class="pupil"></div>
+                <div class="waveform"></div>
+            </div>
+            <div class="logo-text">AURA<span>://detect</span></div>
+        </div>
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span class="status-text">System Status: Online</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="hero">
+            <h1>Is it Real,<br>or is it Synthetic?</h1>
+            <p class="subhead">Upload your footage. AURA scans for AI fingerprints, temporal inconsistencies, and deepfake artifacts.</p>
+        </div>
+
+        <div class="upload-container">
+            <!-- Upload Zone -->
+            <div class="upload-zone" id="uploadZone">
+                <div class="scan-line"></div>
+                <div class="upload-icon">✨</div>
+                <div class="upload-text">Drag & Drop Video</div>
+                <div class="upload-hint">or click to browse</div>
+                <div class="format-support">Supports MP4, MOV, WebM (Max 500MB)</div>
+                <button class="paste-link" id="pasteLinkBtn">Paste Link (URL)</button>
+                <input type="file" id="fileInput" accept="video/*" style="display: none;">
+            </div>
+
+            <!-- Preview Container -->
+            <div class="preview-container" id="previewContainer">
+                <video class="video-preview" id="videoPreview" controls></video>
+                <div class="scanning-modules" id="scanningModules">
+                    <div class="module active">Analyzing Micro-expressions</div>
+                    <div class="module active">Checking Metadata</div>
+                    <div class="module active">GAN Fingerprint Detection</div>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel" id="resultsPanel">
+                <div class="verdict-card">
+                    <div class="meter" id="meter">
+                        <div class="meter-dial" id="meterDial"></div>
+                        <div class="meter-center" id="meterPercentage">0%</div>
+                    </div>
+                    <div class="result-badge" id="resultBadge">FAKE</div>
+                    <div class="probability" id="probability">98% Probability of Synthesis</div>
+                </div>
+                <div class="forensics-card">
+                    <div class="timeline">
+                        <div class="timeline-label">Inconsistency Heatmap</div>
+                        <div class="timeline-bars" id="timelineBars"></div>
+                    </div>
+                    <ul class="findings" id="findings">
+                        <li>Eye reflection mismatch detected</li>
+                        <li>Upscaled GAN artifacts found</li>
+                        <li>Biological pulse not detected</li>
+                        <li>Frame interpolation artifacts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">How it works</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+        <div class="copyright">© 2026 AURA Technologies. All rights reserved.</div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
